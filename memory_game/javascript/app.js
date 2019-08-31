@@ -6,7 +6,28 @@
 // console.log("User flipped " + cardOne)
 // console.log("User flipped " + cardThree)
 
-var cards = ["queen", "queen", "king", "king"]
+var cards = [
+  {
+    rank: "queen",
+    suit: "hearts",
+    cardImage: "../images/images/queen-of-hearts.png"
+  },
+  {
+    rank: "queen",
+    suit: "diamonds",
+    cardImage: "../images/images/queen-of-diamonds.png"
+  },
+  {
+    rank: "king",
+    suit: "hearts",
+    cardImage: "../images/images/king-of-hearts.png"
+  },
+  {
+    rank: "king",
+    suit: "diamonds",
+    cardImage: "../images/images/king-of-diamonds.png"
+  },
+]
 var cardsInPlay = []
 
 function checkForMatch(){
@@ -28,14 +49,17 @@ function flipCard(cardId) {
   // var cardOne = cards[0]
   // cardsInPlay.push(cardOne)
 
-  // //console.log("User flipped " + cardsInPlay)
-
+  //console.log("Cards Object " + cards)
+  //console.log(cardId.rank)
   // var cardTwo = cards[3]
   // cardsInPlay.push(cardTwo)
+  console.log("User flipped " + cardId.rank)
 
-  console.log("User flipped " + cardId)
-  cardsInPlay.push(cardId)
+  cardsInPlay.push(cardId.rank)
   //console.log("pushed " + cardsInPlay)
+
+  console.log(cardId.cardImage)
+  console.log(cardId.suit)
 
   checkForMatch()
 
@@ -50,4 +74,4 @@ function flipCard(cardId) {
 
 
 flipCard(cards[0])
-flipCard(cards[1])
+flipCard(cards[3])
